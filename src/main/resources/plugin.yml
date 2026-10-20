@@ -1,0 +1,15 @@
+name: NullCraftSpawn
+version: '${project.version}'
+main: dev.nullcraft.spawn.NullCraftSpawn
+api-version: '1.21'
+description: Random safe spawn around the world spawn for new players and after death
+author: NullCraft
+commands:
+  ncspawn:
+    description: Reload the random spawn settings, show them, or try a random spot
+    usage: /ncspawn <reload|status|test>
+    permission: nullcraft.spawn.admin
+permissions:
+  nullcraft.spawn.admin:
+    description: Use /ncspawn
+    default: op

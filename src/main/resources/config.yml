@@ -1,0 +1,59 @@
+# NullCraftSpawn: random safe spawn for new players and after death.
+# The area is a square: X and Z are each within center +/- radius.
+# After editing, run /ncspawn reload (or restart).
+
+# World the random spots are in
+world: world
+
+center:
+  # true = the world's spawn point is the center; false = use x and z below
+  use-world-spawn: true
+  x: 0
+  z: 0
+
+radius: 350
+
+# Random spot the first time a player joins this server
+new-players: true
+
+# Random spot when a player respawns after dying
+on-death: true
+
+# Beds and charged respawn anchors win over the random spot
+respect-beds: true
+
+# Deaths in these worlds lead to a random spot
+death-worlds:
+  - world
+  - world_nether
+  - world_the_end
+
+# Tries per spot before falling back to the normal spawn
+max-attempts: 40
+
+# Ready spots kept loaded so respawns are instant
+pool-size: 6
+
+# A player is never placed on or inside these blocks
+unsafe-blocks:
+  - lava
+  - magma_block
+  - cactus
+  - fire
+  - soul_fire
+  - campfire
+  - soul_campfire
+  - powder_snow
+  - sweet_berry_bush
+  - wither_rose
+  - pointed_dripstone
+  - cobweb
+
+# Texts use & colour codes. Set a text to '' to send nothing.
+# Placeholders: {tag} {player} {x} {z}
+messages:
+  tag: '&8[&5&lNULL&d&lCRAFT &f&lBETA&8]'
+  first-join-title: '&5&lNULL&d&lCRAFT'
+  first-join-subtitle: '&7OP ANARCHY &8| &f&lBETA'
+  first-join: '{tag} &7Welcome &f{player}&7! You spawned at &f{x}&7, &f{z}&7.'
+  respawn: '{tag} &7You died and respawned at &f{x}&7, &f{z}&7.'
